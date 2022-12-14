@@ -36,7 +36,7 @@
 
 - [图片旋转](https://github.com/yangKJ/iDay/blob/master/Shell/image_rotation.sh)
 
-<details><summary><font size=3>其他sips命令</font></summary>
+<details><summary><font size=2>其他sips命令</font></summary>
 
 - 裁剪时固定图片宽度，高度自适应
 ```
@@ -75,15 +75,20 @@ sips -g pixelWidth -g pixelHeight image_file_name
 </details>
 
 - [生成ipa文件](https://github.com/yangKJ/iDay/blob/master/Shell/make_ipa.sh)
-    - 1.执行Shell脚本
-    ```
-    sh make_ipa.sh
-    ```
-    - 2.拖拽.app目录到命令行
-    ```
-    工程/Products/xxxx.app
-    ```
-    
-    - 3.输入ipa生成目录，不写即生成在桌面
 
-    - 4.输入ipa生成名称
+<details><summary><font size=2>操作步骤</font></summary>
+
+- 1.执行Shell脚本
+```
+sh make_ipa.sh
+```
+- 2.拖拽.app目录到命令行
+```
+工程/Products/xxxx.app
+```
+
+- 3.输入ipa生成目录，不写即生成在桌面
+
+- 4.输入ipa生成名称
+
+</details>
