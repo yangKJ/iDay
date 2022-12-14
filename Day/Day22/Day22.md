@@ -14,7 +14,7 @@ theme: cyanosis
 ### 实操代码
 
 ```
-// 滤镜
+// 透明度滤镜
 let filter = C7Opacity.init(opacity: 0.75)
 
 // 方案1:
@@ -31,9 +31,9 @@ ImageView.image = originImage ->> filter ->> filter2 ->> filter3
 
 - 不同参数下效果
 
-|opacity: 0.75|opacity: 0.5|opacity: 0.75|
+|opacity: 0.25|opacity: 0.5|opacity: 0.75|
 |:-:|:-:|:-:|
-
+|![WX20221213-111831.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/110099ebe31540468b240e875e388555~tplv-k3u1fbpfcp-watermark.image?)|![WX20221213-111841.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c60cc63f2de74735ada0b010b762980f~tplv-k3u1fbpfcp-watermark.image?)|![WX20221213-111850.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fc736fd9dc894be9ae30a038e9ebb3b6~tplv-k3u1fbpfcp-watermark.image?)|
 
 ### 实现原理
 
@@ -117,3 +117,4 @@ kernel void C7Opacity(texture2d<half, access::write> outputTexture [[texture(0)]
 - 喜欢的老板们可以点个星🌟，谢谢各位老板！！！
 
 ✌️.
+
