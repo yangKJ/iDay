@@ -6,7 +6,7 @@
 
 - 目录列表
 
-|Day|Harbeth Filter Name|滤镜名|链接|
+| Day | Harbeth Filter Name | 滤镜名 | 链接 |
 |:-:|:-|:-|:-|
 |Day1|C7Storyboard|分镜|https://juejin.cn/post/7168309341974429704|
 |Day2|C7SoulOut|灵魂出窍效果|https://juejin.cn/post/7168306850130051079|
@@ -29,44 +29,39 @@
 |Day19|C7Gamma|灰度系数效果|https://juejin.cn/post/7175031825771806780|
 |Day20|C7Haze|去雾效果滤镜|https://juejin.cn/post/7176061952346161210|
 |Day21|C7Monochrome|图像单色效果|https://juejin.cn/post/7176460309907898426|
-|Day22|C7Opacity|透明度||
+|Day22|C7Opacity|透明度|https://juejin.cn/post/7176827523341221946|
 |Day23|C7Posterize|海报画效果滤镜||
 
 ### Shell
 
-#### [图片旋转](https://github.com/yangKJ/iDay/blob/master/Shell/image_rotation.sh)
+- [图片旋转](https://github.com/yangKJ/iDay/blob/master/Shell/image_rotation.sh)
 
-其他sips命令：
+<details><summary><font size=3>其他sips命令</font></summary>
 
 - 裁剪时固定图片宽度，高度自适应
-
 ```
 sips -Z 320 iamge_file_name
 ```
 
 - 裁剪时指定图片宽与高
-
 ```
 # 裁剪图片为400x300大小
 sips -z 400 300 iamge_file_name
 ```
 
 - 旋转图片
-
 ```
 sips -r 90 image_file_name
 ```
 
 - 翻转图片
   - 注：-f支持水平和垂直两种翻转，水平`horizontal`，垂直`vertical`
-
 ```
 sips -f horizontal image_file_name
 ```
 
 - 修改图片格式
   - 注：使用-s参数可以修改图片格式为指定值，sips支持jpeg | tiff | png | gif | jp2 | pict | bmp | qtif | psd | sgi | tga共11种格式；
-
 ```
 sips -s format jpeg input.png --out output.jpg
 ```
@@ -77,20 +72,18 @@ sips -s format jpeg input.png --out output.jpg
 sips -g pixelWidth -g pixelHeight image_file_name
 ```
 
-#### [生成ipa文件](https://github.com/yangKJ/iDay/blob/master/Shell/make_ipa.sh)
+</details>
 
-- 1. 执行Shell脚本
+- [生成ipa文件](https://github.com/yangKJ/iDay/blob/master/Shell/make_ipa.sh)
+    - 1.执行Shell脚本
+    ```
+    sh make_ipa.sh
+    ```
+    - 2.拖拽.app目录到命令行
+    ```
+    工程/Products/xxxx.app
+    ```
+    
+    - 3.输入ipa生成目录，不写即生成在桌面
 
-```
-sh make_ipa.sh
-```
-
-- 2. 拖拽.app目录到命令行
-
-```
-工程/Products/xxxx.app
-```
-
-- 3. 输入ipa生成目录，不写即生成在桌面
-
-- 4. 输入ipa生成名称
+    - 4.输入ipa生成名称
