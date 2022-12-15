@@ -14,7 +14,7 @@ theme: cyanosis
 ### 实操代码
 
 ```
-// 滤镜
+// 海报画滤镜
 let filter = C7Posterize.init(colorLevels: 2.3)
 
 // 方案1:
@@ -33,7 +33,7 @@ ImageView.image = originImage ->> filter ->> filter2 ->> filter3
 
 |colorLevels: 1.03|colorLevels: 2.3|colorLevels: 5.03|
 |:-:|:-:|:-:|
-
+|![WX20221213-112230.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/453f03da31e9420a941c0f08f3ce3cc7~tplv-k3u1fbpfcp-watermark.image?)|![WX20221213-112244.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8015403c270a477491e03236644a81a1~tplv-k3u1fbpfcp-watermark.image?)|![WX20221213-112256.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2958636b80794a17a79e9840555e351d~tplv-k3u1fbpfcp-watermark.image?)|
 
 ### 实现原理
 

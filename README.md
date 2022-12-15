@@ -30,7 +30,7 @@
 |Day20|C7Haze|去雾效果滤镜|https://juejin.cn/post/7176061952346161210|
 |Day21|C7Monochrome|图像单色效果|https://juejin.cn/post/7176460309907898426|
 |Day22|C7Opacity|透明度|https://juejin.cn/post/7176827523341221946|
-|Day23|C7Posterize|海报画效果滤镜||
+|Day23|C7Posterize|海报画效果滤镜|https://juejin.cn/post/7177184656532439096|
 
 ### Shell
 
