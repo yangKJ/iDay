@@ -12,6 +12,7 @@ theme: cyanosis
 ### Demo
 
 - [**HarbethDemo地址**](https://github.com/yangKJ/Harbeth)
+- [**iDay每日分享文档地址**](https://github.com/yangKJ/iDay)
 
 ### 实操代码
 

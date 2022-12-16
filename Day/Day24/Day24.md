@@ -10,12 +10,13 @@ theme: cyanosis
 ### Demo
 
 - [**HarbethDemo地址**](https://github.com/yangKJ/Harbeth)
+- [**iDay每日分享文档地址**](https://github.com/yangKJ/iDay)
 
 ### 实操代码
 
 ```
 // 纯色滤镜
-ImageView.image = C7Color.purple.mt.colorImage(with: CGSize(width: 600, height: 600))
+ImageView.image = C7Color.purple.mt.colorImage(with: CGSize(width: 600, height: 300))
 ```
 
 ### 效果对比图
@@ -27,6 +28,31 @@ ImageView.image = C7Color.purple.mt.colorImage(with: CGSize(width: 600, height: 
 |![WX20221216-102421.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6e0618b805b249cc8a0d6c6651fa55f0~tplv-k3u1fbpfcp-watermark.image?)|![WX20221216-102432.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d3f6a27725f241e2850822050158ed0b~tplv-k3u1fbpfcp-watermark.image?)|![WX20221216-102946.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/92b49401fff041e59d23332a49ee00e1~tplv-k3u1fbpfcp-watermark.image?)|
 
 ### 实现原理
+
+- 颜色扩展
+
+根据指定颜色和尺寸生成纯色图片；
+
+```
+#if HARBETH_COMPUTE // Compute module
+extension Queen where Base: C7Color {
+    
+    /// Create a solid color image.
+    /// - Parameters:
+    ///   - color: Indicates the color.
+    ///   - size: Indicates the size of the solid color diagram.
+    /// - Returns: Solid color graph.
+    public func colorImage(with size: CGSize = CGSize(width: 1, height: 1)) -> C7Image? {
+        let width  = Int(size.width > 0 ? size.width : 1)
+        let height = Int(size.height > 0 ? size.height : 1)
+        let texture = Processed.destTexture(width: width, height: height)
+        let filter = C7SolidColor.init(color: base)
+        let result = try? Processed.IO(inTexture: texture, outTexture: texture, filter: filter)
+        return result?.toImage()
+    }
+}
+#endif
+```
 
 - 过滤器
 
@@ -92,31 +118,6 @@ kernel void C7SolidColor(texture2d<half, access::write> outputTexture [[texture(
     
     outputTexture.write(outColor, grid);
 }
-```
-
-- 颜色扩展
-
-根据指定颜色和尺寸生成纯色图片；
-
-```
-#if HARBETH_COMPUTE // Compute module
-extension Queen where Base: C7Color {
-    
-    /// Create a solid color image.
-    /// - Parameters:
-    ///   - color: Indicates the color.
-    ///   - size: Indicates the size of the solid color diagram.
-    /// - Returns: Solid color graph.
-    public func colorImage(with size: CGSize = CGSize(width: 1, height: 1)) -> C7Image? {
-        let width  = Int(size.width > 0 ? size.width : 1)
-        let height = Int(size.height > 0 ? size.height : 1)
-        let texture = Processed.destTexture(width: width, height: height)
-        let filter = C7SolidColor.init(color: base)
-        let result = try? Processed.IO(inTexture: texture, outTexture: texture, filter: filter)
-        return result?.toImage()
-    }
-}
-#endif
 ```
 
 ### [Harbeth功能清单](https://github.com/yangKJ/Harbeth)
