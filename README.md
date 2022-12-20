@@ -32,6 +32,8 @@
 |Day22|C7Opacity|透明度|https://juejin.cn/post/7176827523341221946|
 |Day23|C7Posterize|海报画效果滤镜|https://juejin.cn/post/7177184656532439096|
 |Day24|C7SolidColor|纯色滤镜|https://juejin.cn/post/7177568362686316600|
+|Day25|C7Vibrance|自然饱和度滤镜|https://juejin.cn/post/7179034296785567801|
+|Day26|C7WhiteBalance|色温白平衡滤镜|https://juejin.cn/post/7179047128772116539|
 
 ### Shell
 
