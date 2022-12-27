@@ -35,6 +35,7 @@
 |Day25|C7Vibrance|自然饱和度滤镜|https://juejin.cn/post/7179034296785567801|
 |Day26|C7WhiteBalance|色温白平衡滤镜|https://juejin.cn/post/7179047128772116539|
 |Day27|C7ColorSpace|色彩空间滤镜|https://juejin.cn/post/7179397518345093177|
+|Day28|C7BilateralBlur|双边模糊滤镜|https://juejin.cn/post/7181381743940173885|
 
 ### Shell
 
