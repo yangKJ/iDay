@@ -1,0 +1,36 @@
+
+
+安装SVN环境: brew install svn
+客户端功能: https://blog.51cto.com/u_14785218/2878558
+
+
+1.从本地导入代码到服务器(第一次初始化导入)
+svn import 本地路径 svn项目地址 --username=xxx  --password=xxx -m "Initial Commit"
+
+2.从服务器端下载代码到客户端本地
+svn checkout svn项目地址  --username=xxx  --password=xxx
+
+3.提交更改过的代码到服务器
+svn commit -m "修改备注"
+
+4.更新服务器端的代码到客户端
+svn update
+
+
+上传步骤
+
+1、首先要先切入要传的文件夹内
+
+2、查看状态
+svn status
+？代表可以加到版本控制
+A 代表加到本本控制成功
+
+3、加到版本控制
+svn add 文件路径
+
+4、提交到服务器
+svn commit -m "说明"
+
+5、查看日志
+svn log

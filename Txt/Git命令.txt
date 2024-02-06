@@ -1,0 +1,171 @@
+
+查看某行代码谁写的
+git blame -L 58,100 file_name  # 58~100 行代码
+
+根据 commit_ID 可以查看对应的提交记录
+git show commit_ID
+
+
+Git commit提交规范
+------------------------------------------------------------------------
+
+Feat：新功能（feature）
+
+Fix：修补bug
+
+Docs：文档（documentation）
+
+Style：格式（不影响代码运行的变动）
+
+Refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+
+Test：增加测试
+
+Chore：构建过程或辅助工具的变动
+
+
+------------------------------------------------------------------------
+
+
+
+Git 终端命令
+------------------------------------------------------------------------
+
+1、添加文件到版本库缓存区
+git add .
+
+2、添加文件到版本库
+git commit -m "备注信息"
+
+3、push到远程仓库
+git push origin 分支
+
+4、拉取远端代码
+git pull origin 分支
+
+5、恢复到多少次提交前的状态，i：恢复到多少次提交前的状态
+git reset --soft HEAD~i
+
+6、删除远端提交记录
+git push origin master --force
+
+7、添加本地tag
+git tag -a 0.0.0 -m 'release 0.0.0'
+
+8、传到远程
+git push origin --tags
+
+9、上传到Cocoapods
+pod trunk push KJEmitterView.podspec --allow-warnings
+
+10、无需联网验证
+pod lib lint --allow-warnings
+
+11、强制覆盖本地命令
+git fetch --all && git reset --hard origin/master && git pull
+
+12、查看远端分支
+git branch -r
+
+13、切换本地分支
+git checkout -b 分支 origin/分支
+
+14、检出想要的远程分支
+git checkout orgin/远程分支名
+
+15、如果远程没有该分支，创建分支
+git checkout -b orgin/远程分支名
+
+
+使用 Git worktree 将同一个项目分裂成多个本地目录
+https://einverne.github.io/post/2019/03/git-worktree.html
+
+git worktree add ../new-dir some-existing-branch
+git worktree add [path] [branch]
+
+修改分支名
+1、修改本地分支名
+git branch -m oldName newName
+
+2、删除远程分支
+git push --delete origin oldName
+
+3、上传新命名的本地分支
+git push origin newName
+
+4、本地分支与远程分支关联
+git branch --set-upstream-to origin/newName
+
+
+------------------------------------------------------------------------
+
+
+GitHub突破上传 100M 限制
+1、安装LFS插件
+git lfs install
+
+2、需要上传的大文件
+由此可以看出大文件的路径 "Example/Pods/OpenCV/opencv2.framework/Versions/A/opencv2"
+remote: error: File Example/Pods/OpenCV/opencv2.framework/Versions/A/opencv2 is 332.36 MB; this exceeds GitHub's file size limit of 100.00 MB
+
+命令：git lfs track "大文件路径"
+
+3、添加`gitattributes`文件
+git add .gitattributes
+
+4、正常提交push命令即可
+git add .
+git commit -m "提交记录"
+git push origin master
+
+Git 终端BUG
+------------------------------------------------------------------------
+问题1：LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+
+取消代理，终端代码：
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+打开模拟器
+Open -a Simulator
+
+配置终端代理
+export http_proxy=http://127.0.0.1:8118    // 8118端口号，根据实际情况修改
+export https_proxy=$http_proxy
+
+关闭终端代理
+unset http_proxy https_proxy
+
+配置Flutter环境变量
+export PATH=~/flutter/bin:$PATH
+
+目录结构：tree -L 2 >README.md
+
+KJNetworkPlugin
+├── Docs
+│   ├── BATCH.md
+│   ├── CHAIN.md
+│   └── THIEF.md
+├── GitStandard.md
+├── KJNetworkPlugin
+│   ├── Batch
+│   ├── Chain
+│   ├── Network
+│   └── Plugins
+├── KJNetworkPlugin.podspec
+├── KJNetworkPluginTests
+│   ├── Info.plist
+│   ├── KJNetworkAnslysisPluginTests.m
+│   ├── KJNetworkBatchTests.m
+│   ├── KJNetworkCertificatePluginTests.m
+│   ├── KJNetworkChainTests.m
+│   ├── KJNetworkPluginTests.m
+│   └── KJNetworkThiefPluginTests.m
+├── LICENSE
+├── Pods
+│   ├── AFNetworking
+│   ├── MJExtension
+│   └── YYCache
+└── README.md
+
+

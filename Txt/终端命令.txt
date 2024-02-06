@@ -1,0 +1,6 @@
+
+终端命令
+
+
+获取SSH key
+pbcopy < ~/.ssh/id_rsa.pub

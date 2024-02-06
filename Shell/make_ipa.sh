@@ -69,7 +69,7 @@ echo ${outputPath}
 ## 打开输出的路径
 #open -a Finder "${outputPath}"
 # 从当前位置打开finder
-open .
+#open .
 
 # 结束退出
 exit 0

@@ -1,0 +1,58 @@
+
+网络错误信息
+
+⚠️pod install
+
+[!] Error installing Mantis
+[!] /usr/bin/git clone https://github.com/guoyingtao/Mantis.git /var/folders/99/7x38x27970qfg1thbjmbbh9r0000gn/T/d20240119-85029-11ujtwl --template= --single-branch --depth 1 --branch v2.18.0
+
+Cloning into '/var/folders/99/7x38x27970qfg1thbjmbbh9r0000gn/T/d20240119-85029-11ujtwl'...
+fatal: unable to access 'https://github.com/guoyingtao/Mantis.git/': Failed to connect to github.com port 443 after 75003 ms: Couldn't connect to server
+
+如果设置过代理，可能本机系统代理端口和git端口不一致导致
+
+查看当前用户配置
+git config --global  --list
+
+删除某项配置,eg:用户名
+git config --unset user.name
+
+配置全局代理
+git config --global http.proxy http://127.0.0.1:8118
+git config --global https.proxy http://127.0.0.1:8118
+
+设置代理端口：
+export https_proxy=http://127.0.0.1:8118
+export http_proxy=http://127.0.0.1:8118
+//export all_proxy=socks5://127.0.0.1:8119
+
+这里端口同代理软件里面的端口，然后网络连接里面的端口也需要保持一致
+
+取消代理
+unset http_proxy
+unset https_proxy
+//unset all_proxy
+
+查看代理
+env | grep -i proxy
+
+Xcode 使用代理
+// 如果是project 使用以下命令
+xcodebuild -resolvePackageDependencies -scmProvider system -project XXXX.xcodeproj
+
+// 如果是workspace 需要指定scheme，或者使用-list
+xcodebuild -resolvePackageDependencies -scmProvider system -list -workspace Awakening.xcworkspace
+
+全局配置命令，添加针对github.com的代理设置
+git config --global https.github.com.proxy socks5://127.0.0.1:8119
+
+
+
+⚠️全局代理导致提交代码失败
+fatal: unable to access 'https://git.mpbk-ios.git/': Proxy CONNECT aborted
+
+查看是否设置全局代理
+git config --global http.proxy 
+
+取消全局代理
+git config --global --unset http.proxy
