@@ -56,3 +56,15 @@ git config --global http.proxy
 
 取消全局代理
 git config --global --unset http.proxy
+
+
+
+⚠️证书失效
+/usr/bin/git -C /Users/a2019/.cocoapods/repos/unionpay-cloudpay-commonproject-upsdkpodspecs fetch origin --progress
+  fatal: unable to access 'https://e.coding.shf.yun.unionpay.com/cloudpay/commonProject/upsdkpodspecs.git/': SSL certificate problem: certificate has expired
+
+关闭 git 安全校验
+git config --global http.sslVerify false
+
+
+
