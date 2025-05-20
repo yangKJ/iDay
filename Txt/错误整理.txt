@@ -56,3 +56,30 @@ git config --global http.proxy
 
 取消全局代理
 git config --global --unset http.proxy
+
+
+
+⚠️证书失效
+/usr/bin/git -C /Users/a2019/.cocoapods/repos/unionpay-cloudpay-commonproject-upsdkpodspecs fetch origin --progress
+  fatal: unable to access 'https://e.coding.shf.yun.unionpay.com/cloudpay/commonProject/upsdkpodspecs.git/': SSL certificate problem: certificate has expired
+
+关闭 git 安全校验
+git config --global http.sslVerify false
+
+
+
+--------------------------------------------------------------------------------------------------
+
+Xcode真机调试报如下错误：
+could not locate device support files
+
+1.先去GitHub -> iOSDeviceSupport -> 下载对应系统包
+2.打开Finder，在菜单栏选择“前往”->“前往文件夹”，输入以下路径：/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
+3.然后将调试真机的系统包拷贝进来即可，重启Xcode
+
+
+
+
+
+
+
